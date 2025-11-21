@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SOEPARNO ENTERPRISE Corp.</title>
+  <title>SEC Futuristic Monochrome</title>
   <style>
     /* Reset & Base */
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
@@ -63,15 +63,24 @@
       border-radius: 8px;
       font-weight: bold;
       opacity: 0;
-      transform: translateY(20px);
-      animation: appear 0.5s forwards;
+      transform: scale(0.5) translateY(20px);
+      animation: appear 0.6s forwards;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    /* Hover effect */
+    .bar:hover {
+      transform: scale(1.2);
+      background: #fff;
+      cursor: pointer;
     }
 
     /* Animasi muncul satu per satu */
     @keyframes appear {
-      to { opacity: 1; transform: translateY(0); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
     }
 
+    /* Delay tiap bar */
     .bar:nth-child(1)  { animation-delay: 0.1s; }
     .bar:nth-child(2)  { animation-delay: 0.2s; }
     .bar:nth-child(3)  { animation-delay: 0.3s; }
@@ -88,11 +97,11 @@
 </head>
 <body>
 
-  <header>SOEPARNO ENTERPRISE</header>
+  <header>SEC Futuristic</header>
 
   <div class="container">
     <div class="bars">
-      <div class="bar">Technology</div>
+      <div class="bar">1</div>
       <div class="bar">2</div>
       <div class="bar">3</div>
       <div class="bar">4</div>
@@ -107,7 +116,7 @@
     </div>
   </div>
 
-  <footer>© 2025 SOEPARNO ENTERPRISE Corp. All rights reserved.</footer>
+  <footer>© 2025 SEC. All rights reserved.</footer>
 
 </body>
 </html>
