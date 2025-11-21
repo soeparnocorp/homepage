@@ -7,59 +7,91 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="/assets/logo.png" alt="Soeparno Enterprise" class="logo" />
+        <span class="brand-name">Soeparno Enterprise</span>
+      </div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-  <div class="wrap">
-
+  <!-- HERO (bg.webp) -->
+  <main>
     <section class="hero" id="hero">
-      <div class="inner">
+      <div class="hero-overlay"></div>
+      <div class="container hero-inner">
         <div class="slogan">the future in your hand – the challenge is in your way</div>
         <h1 class="hero-title">Soeparno Enterprise Corp</h1>
-        <p class="muted">Header visual yang responsif: zoom-in pada smartphone, full pada PC.</p>
+        <p class="hero-sub muted">Inovasi, manufaktur, layanan — satu atap.</p>
+
+        <!-- DIVISIONS (12) — berada di area hero, sebelum footer -->
+        <div class="divisions-wrap" aria-label="Divisions">
+          <div class="divisions-grid" id="divisions"></div>
+        </div>
       </div>
     </section>
 
-    <div class="boxes" aria-label="konten utama">
-      <div class="box" id="box1">
-        <h3>Menu</h3>
-        <p class="muted">Home • About • Careers • Contact • Investor Relations</p>
+    <!-- Optional: placeholder content between hero & footer -->
+    <section class="content container">
+      <!-- kosong / nanti diisi konten lain -->
+    </section>
+  </main>
+
+  <!-- FOOTER (model GitHub like) -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-left">
+        <h4>Soeparno Enterprise Corp</h4>
+        <address>
+          Jl. Contoh No.123<br>
+          Jakarta, Indonesia<br>
+          Tel: +62 21 555 0123
+        </address>
+        <small class="muted">© <span id="year"></span> SOEPARNO ENTERPRISE Corp.</small>
       </div>
 
-      <div class="box" id="box2">
-        <h3>Alamat Kantor</h3>
-        <p class="muted">Jl. Contoh No.123, Jakarta — Jam kerja: 09.00–17.00</p>
+      <div class="footer-col footer-mid">
+        <h4>Navigation</h4>
+        <ul class="footer-nav">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Investor Relations</a></li>
+        </ul>
       </div>
 
-      <div class="box" id="box3">
-        <h3>Kritik & Saran</h3>
-        <div style="margin-top:10px">
-          <div class="form-row">
-            <input id="name" placeholder="Nama" />
-            <input id="email" placeholder="Email" />
-          </div>
-          <div style="margin-top:10px">
-            <textarea id="msg" placeholder="Kritik & Saran"></textarea>
-          </div>
-          <div style="margin-top:10px">
-            <button id="sendBtn" class="btn-send">KIRIM</button>
-          </div>
-        </div>
+      <div class="footer-col footer-right">
+        <h4>Kontak Cepat</h4>
+        <form id="footerForm" class="footer-form" novalidate>
+          <input id="f_name" name="name" type="text" placeholder="Nama" required>
+          <input id="f_email" name="email" type="email" placeholder="Email" required>
+          <textarea id="f_msg" name="message" placeholder="Kritik & Saran" required></textarea>
+          <button id="footerSend" class="btn-send" type="button">KIRIM</button>
+        </form>
+        <p class="muted small">Form ini contoh; kirim akan simpan di localStorage (demo).</p>
       </div>
     </div>
+  </footer>
 
-    <div class="divisions-wrap">
-      <div class="divisions-header">Divisions</div>
-      <div class="divisions" id="divisions"></div>
-    </div>
-
-  </div>
-
-  <!-- modal -->
-  <div class="modal" id="modal" aria-modal="true" aria-hidden="true">
-    <div class="card">
-      <button id="closeModal" class="close-btn">✕</button>
-      <h3 id="modalTitle"></h3>
-      <div id="modalBody"></div>
-      <span id="modalReadmore" class="readmore">selengkapnya</span>
+  <!-- MODAL POPUP (About / Divisi) -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card" role="document">
+      <button id="closeModal" class="modal-close" aria-label="Tutup">✕</button>
+      <h3 id="modalTitle">Judul Divisi</h3>
+      <div id="modalBody" class="modal-body">Deskripsi singkat divisi akan muncul di sini.</div>
+      <div class="modal-actions">
+        <span id="modalReadmore" class="readmore" role="link" tabindex="0">selengkapnya</span>
+      </div>
     </div>
   </div>
 
