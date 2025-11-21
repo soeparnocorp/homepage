@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Soeparno Enterprise Corp</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="wrap">
+
+    <section class="hero" id="hero">
+      <div class="inner">
+        <div class="slogan">the future in your hand – the challenge is in your way</div>
+        <h1 class="hero-title">Soeparno Enterprise Corp</h1>
+        <p class="muted">Header visual yang responsif: zoom-in pada smartphone, full pada PC.</p>
+      </div>
+    </section>
+
+    <div class="boxes" aria-label="konten utama">
+      <div class="box" id="box1">
+        <h3>Menu</h3>
+        <p class="muted">Home • About • Careers • Contact • Investor Relations</p>
+      </div>
+
+      <div class="box" id="box2">
+        <h3>Alamat Kantor</h3>
+        <p class="muted">Jl. Contoh No.123, Jakarta — Jam kerja: 09.00–17.00</p>
+      </div>
+
+      <div class="box" id="box3">
+        <h3>Kritik & Saran</h3>
+        <div style="margin-top:10px">
+          <div class="form-row">
+            <input id="name" placeholder="Nama" />
+            <input id="email" placeholder="Email" />
+          </div>
+          <div style="margin-top:10px">
+            <textarea id="msg" placeholder="Kritik & Saran"></textarea>
+          </div>
+          <div style="margin-top:10px">
+            <button id="sendBtn" class="btn-send">KIRIM</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divisions-wrap">
+      <div class="divisions-header">Divisions</div>
+      <div class="divisions" id="divisions"></div>
+    </div>
+
+  </div>
+
+  <!-- modal -->
+  <div class="modal" id="modal" aria-modal="true" aria-hidden="true">
+    <div class="card">
+      <button id="closeModal" class="close-btn">✕</button>
+      <h3 id="modalTitle"></h3>
+      <div id="modalBody"></div>
+      <span id="modalReadmore" class="readmore">selengkapnya</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
