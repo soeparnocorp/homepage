@@ -1,100 +1,125 @@
-<!doctype html>
-<html lang="id">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Soeparno Enterprise Corp</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Futuristic Design</title>
+  <style>
+    /* Reset & Base */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    body, html { width: 100%; height: 100%; overflow-x: hidden; }
+
+    /* Background */
+    body {
+      background: url('assets/bg.webp') center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #00ff99;
+      position: relative;
+    }
+
+    /* Overlay effect */
+    body::after {
+      content: "";
+      position: absolute;
+      top:0; left:0; right:0; bottom:0;
+      background: rgba(0,0,0,0.6);
+      z-index: 0;
+    }
+
+    /* Container */
+    .container {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    h1 {
+      font-size: 4rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: slideUp 1s forwards 0.5s;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #00ffaa;
+      opacity: 0;
+      animation: slideUp 1s forwards 1.2s;
+    }
+
+    /* Button */
+    .btn {
+      margin-top: 30px;
+      padding: 12px 28px;
+      font-size: 1rem;
+      color: #000;
+      background: #00ff99;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      opacity: 0;
+      animation: slideUp 1s forwards 1.8s;
+    }
+
+    .btn:hover {
+      background: #00cc7a;
+      transform: scale(1.05);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Floating particles */
+    .particle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: #00ff99;
+      border-radius: 50%;
+      animation: float 10s linear infinite;
+      opacity: 0.6;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) translateX(0); }
+      100% { transform: translateY(-100vh) translateX(100px); }
+    }
+  </style>
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <img src="/assets/logo.png" alt="Soeparno Enterprise" class="logo" />
-        <span class="brand-name">Soeparno Enterprise</span>
-      </div>
-      <nav class="main-nav" aria-label="Main navigation">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Portfolio</a>
-        <a href="#">Careers</a>
-        <a href="#">Contact</a>
-      </nav>
-    </div>
-  </header>
 
-  <!-- HERO (bg.webp) -->
-  <main>
-    <section class="hero" id="hero">
-      <div class="hero-overlay"></div>
-      <div class="container hero-inner">
-        <div class="slogan">the future in your hand – the challenge is in your way</div>
-        <h1 class="hero-title">Soeparno Enterprise Corp</h1>
-        <p class="hero-sub muted">Inovasi, manufaktur, layanan — satu atap.</p>
-
-        <!-- DIVISIONS (12) — berada di area hero, sebelum footer -->
-        <div class="divisions-wrap" aria-label="Divisions">
-          <div class="divisions-grid" id="divisions"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Optional: placeholder content between hero & footer -->
-    <section class="content container">
-      <!-- kosong / nanti diisi konten lain -->
-    </section>
-  </main>
-
-  <!-- FOOTER (model GitHub like) -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-col footer-left">
-        <h4>Soeparno Enterprise Corp</h4>
-        <address>
-          Jl. Contoh No.123<br>
-          Jakarta, Indonesia<br>
-          Tel: +62 21 555 0123
-        </address>
-        <small class="muted">© <span id="year"></span> SOEPARNO ENTERPRISE Corp.</small>
-      </div>
-
-      <div class="footer-col footer-mid">
-        <h4>Navigation</h4>
-        <ul class="footer-nav">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Investor Relations</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col footer-right">
-        <h4>Kontak Cepat</h4>
-        <form id="footerForm" class="footer-form" novalidate>
-          <input id="f_name" name="name" type="text" placeholder="Nama" required>
-          <input id="f_email" name="email" type="email" placeholder="Email" required>
-          <textarea id="f_msg" name="message" placeholder="Kritik & Saran" required></textarea>
-          <button id="footerSend" class="btn-send" type="button">KIRIM</button>
-        </form>
-        <p class="muted small">Form ini contoh; kirim akan simpan di localStorage (demo).</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- MODAL POPUP (About / Divisi) -->
-  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="modal-card" role="document">
-      <button id="closeModal" class="modal-close" aria-label="Tutup">✕</button>
-      <h3 id="modalTitle">Judul Divisi</h3>
-      <div id="modalBody" class="modal-body">Deskripsi singkat divisi akan muncul di sini.</div>
-      <div class="modal-actions">
-        <span id="modalReadmore" class="readmore" role="link" tabindex="0">selengkapnya</span>
-      </div>
-    </div>
+  <div class="container">
+    <h1>XYZAROOM</h1>
+    <p>Experience the futuristic vibes with interactive design patterns</p>
+    <button class="btn">Explore</button>
   </div>
 
-  <script src="script.js"></script>
+  <!-- Floating particles -->
+  <script>
+    const body = document.body;
+    for(let i=0; i<50; i++){
+      let particle = document.createElement('div');
+      particle.classList.add('particle');
+      particle.style.left = Math.random() * window.innerWidth + 'px';
+      particle.style.animationDuration = (5 + Math.random() * 10) + 's';
+      particle.style.width = particle.style.height = (2 + Math.random() * 6) + 'px';
+      body.appendChild(particle);
+    }
+  </script>
+  
 </body>
 </html>
