@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Futuristic Design</title>
+  <title>SEC Monochrome Layout</title>
   <style>
     /* Reset & Base */
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
@@ -13,113 +13,101 @@
     body {
       background: url('assets/bg.webp') center/cover no-repeat;
       display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      color: #eee;
+    }
+
+    /* Header */
+    header {
+      padding: 20px 40px;
+      background: rgba(0,0,0,0.7);
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: auto;
+      padding: 15px 40px;
+      background: rgba(0,0,0,0.7);
+      text-align: center;
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    /* Container for bars */
+    .container {
+      flex: 1;
+      display: flex;
       justify-content: center;
       align-items: center;
-      color: #00ff99;
-      position: relative;
     }
 
-    /* Overlay effect */
-    body::after {
-      content: "";
-      position: absolute;
-      top:0; left:0; right:0; bottom:0;
-      background: rgba(0,0,0,0.6);
-      z-index: 0;
+    .bars {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
     }
 
-    /* Container */
-    .container {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      animation: fadeIn 2s ease forwards;
-    }
-
-    h1 {
-      font-size: 4rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-      opacity: 0;
-      animation: slideUp 1s forwards 0.5s;
-    }
-
-    p {
-      font-size: 1.2rem;
-      color: #00ffaa;
-      opacity: 0;
-      animation: slideUp 1s forwards 1.2s;
-    }
-
-    /* Button */
-    .btn {
-      margin-top: 30px;
-      padding: 12px 28px;
-      font-size: 1rem;
-      color: #000;
-      background: #00ff99;
-      border: none;
+    .bar {
+      width: 80px;
+      height: 80px;
+      background: #ccc;
+      color: #1a1a1a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
+      font-weight: bold;
       opacity: 0;
-      animation: slideUp 1s forwards 1.8s;
+      transform: translateY(20px);
+      animation: appear 0.5s forwards;
     }
 
-    .btn:hover {
-      background: #00cc7a;
-      transform: scale(1.05);
+    /* Animasi muncul satu per satu */
+    @keyframes appear {
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes slideUp {
-      from { transform: translateY(30px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    /* Floating particles */
-    .particle {
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      background: #00ff99;
-      border-radius: 50%;
-      animation: float 10s linear infinite;
-      opacity: 0.6;
-    }
-
-    @keyframes float {
-      0% { transform: translateY(100vh) translateX(0); }
-      100% { transform: translateY(-100vh) translateX(100px); }
-    }
+    .bar:nth-child(1)  { animation-delay: 0.1s; }
+    .bar:nth-child(2)  { animation-delay: 0.2s; }
+    .bar:nth-child(3)  { animation-delay: 0.3s; }
+    .bar:nth-child(4)  { animation-delay: 0.4s; }
+    .bar:nth-child(5)  { animation-delay: 0.5s; }
+    .bar:nth-child(6)  { animation-delay: 0.6s; }
+    .bar:nth-child(7)  { animation-delay: 0.7s; }
+    .bar:nth-child(8)  { animation-delay: 0.8s; }
+    .bar:nth-child(9)  { animation-delay: 0.9s; }
+    .bar:nth-child(10) { animation-delay: 1s; }
+    .bar:nth-child(11) { animation-delay: 1.1s; }
+    .bar:nth-child(12) { animation-delay: 1.2s; }
   </style>
 </head>
 <body>
 
+  <header>SEC Monochrome</header>
+
   <div class="container">
-    <h1>XYZAROOM</h1>
-    <p>Experience the futuristic vibes with interactive design patterns</p>
-    <button class="btn">Explore</button>
+    <div class="bars">
+      <div class="bar">1</div>
+      <div class="bar">2</div>
+      <div class="bar">3</div>
+      <div class="bar">4</div>
+      <div class="bar">5</div>
+      <div class="bar">6</div>
+      <div class="bar">7</div>
+      <div class="bar">8</div>
+      <div class="bar">9</div>
+      <div class="bar">10</div>
+      <div class="bar">11</div>
+      <div class="bar">12</div>
+    </div>
   </div>
 
-  <!-- Floating particles -->
-  <script>
-    const body = document.body;
-    for(let i=0; i<50; i++){
-      let particle = document.createElement('div');
-      particle.classList.add('particle');
-      particle.style.left = Math.random() * window.innerWidth + 'px';
-      particle.style.animationDuration = (5 + Math.random() * 10) + 's';
-      particle.style.width = particle.style.height = (2 + Math.random() * 6) + 'px';
-      body.appendChild(particle);
-    }
-  </script>
-  
+  <footer>© 2025 SEC. All rights reserved.</footer>
+
 </body>
 </html>
