@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SEC Monochrome Full Layout</title>
+  <title>SEC Monochrome Divisions</title>
   <style>
     /* Reset & Base */
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
@@ -24,48 +24,53 @@
       font-weight: bold;
     }
 
-    /* Container for bars */
+    /* Container for vertical divisions */
     .container {
       flex: 1;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
+      padding: 40px 0;
     }
 
     .bars {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       gap: 15px;
-      justify-content: center;
+      background: rgba(0,0,0,0.6);
+      padding: 20px;
+      border-radius: 10px;
     }
 
     .bar {
-      width: 80px;
-      height: 80px;
+      width: 250px;
+      padding: 15px 20px;
       background: #ccc;
       color: #1a1a1a;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       border-radius: 8px;
       font-weight: bold;
       opacity: 0;
       transform: scale(0.5) translateY(20px);
       animation: appear 0.6s forwards;
-      transition: transform 0.3s ease, background 0.3s ease;
+      transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      text-align: center;
     }
 
-    .bar:hover {
-      transform: scale(1.2);
+    /* Hover/focus pop/glow effect */
+    .bar:hover,
+    .bar:focus {
+      transform: scale(1.1);
       background: #fff;
-      cursor: pointer;
+      color: #1a1a1a;
+      box-shadow: 0 0 15px rgba(255,255,255,0.7), 0 0 25px rgba(255,255,255,0.5) inset;
     }
 
     @keyframes appear {
       to { opacity: 1; transform: scale(1) translateY(0); }
     }
 
-    /* Delay tiap bar */
+    /* Delay for sequential animation */
     .bar:nth-child(1)  { animation-delay: 0.1s; }
     .bar:nth-child(2)  { animation-delay: 0.2s; }
     .bar:nth-child(3)  { animation-delay: 0.3s; }
@@ -143,6 +148,7 @@
     .footer-bottom { text-align:center; font-size:0.85rem; color:#888; margin-top:20px; }
 
     @media(max-width: 600px){
+      .bars { width: 90%; }
       .footer-links { flex-direction: column; gap: 10px; }
     }
   </style>
@@ -150,23 +156,23 @@
 <body>
 
   <!-- Header -->
-  <header>SEC Futuristic</header>
+  <header>SEC Futuristic Divisions</header>
 
-  <!-- 12 Bars Container -->
+  <!-- Vertical Divisions Container -->
   <div class="container">
     <div class="bars">
-      <div class="bar">1</div>
-      <div class="bar">2</div>
-      <div class="bar">3</div>
-      <div class="bar">4</div>
-      <div class="bar">5</div>
-      <div class="bar">6</div>
-      <div class="bar">7</div>
-      <div class="bar">8</div>
-      <div class="bar">9</div>
-      <div class="bar">10</div>
-      <div class="bar">11</div>
-      <div class="bar">12</div>
+      <div class="bar">Technology</div>
+      <div class="bar">Aerospace</div>
+      <div class="bar">Defense</div>
+      <div class="bar">Industries</div>
+      <div class="bar">Steel</div>
+      <div class="bar">Energy</div>
+      <div class="bar">Medical</div>
+      <div class="bar">Chemicals</div>
+      <div class="bar">Shipping</div>
+      <div class="bar">Foods</div>
+      <div class="bar">Entertainment</div>
+      <div class="bar">Foundation</div>
     </div>
   </div>
 
