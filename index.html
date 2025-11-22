@@ -3,28 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SEC Monochrome Footer + Contact</title>
+  <title>SEC Monochrome Full Layout</title>
   <style>
     /* Reset & Base */
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-    body, html { width: 100%; height: 100%; color: #eee; background: #1a1a1a; }
+    html, body { width: 100%; height: 100%; color: #eee; background: url('assets/bg.webp') center/cover no-repeat; }
 
-    /* Footer Container */
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    header {
+      padding: 20px 40px;
+      background: rgba(0,0,0,0.7);
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    /* Container for bars */
+    .container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .bars {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .bar {
+      width: 80px;
+      height: 80px;
+      background: #ccc;
+      color: #1a1a1a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      font-weight: bold;
+      opacity: 0;
+      transform: scale(0.5) translateY(20px);
+      animation: appear 0.6s forwards;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .bar:hover {
+      transform: scale(1.2);
+      background: #fff;
+      cursor: pointer;
+    }
+
+    @keyframes appear {
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    /* Delay tiap bar */
+    .bar:nth-child(1)  { animation-delay: 0.1s; }
+    .bar:nth-child(2)  { animation-delay: 0.2s; }
+    .bar:nth-child(3)  { animation-delay: 0.3s; }
+    .bar:nth-child(4)  { animation-delay: 0.4s; }
+    .bar:nth-child(5)  { animation-delay: 0.5s; }
+    .bar:nth-child(6)  { animation-delay: 0.6s; }
+    .bar:nth-child(7)  { animation-delay: 0.7s; }
+    .bar:nth-child(8)  { animation-delay: 0.8s; }
+    .bar:nth-child(9)  { animation-delay: 0.9s; }
+    .bar:nth-child(10) { animation-delay: 1s; }
+    .bar:nth-child(11) { animation-delay: 1.1s; }
+    .bar:nth-child(12) { animation-delay: 1.2s; }
+
+    /* Footer */
     footer {
       background: rgba(0,0,0,0.85);
       padding: 40px 20px;
+      color: #eee;
       display: flex;
       flex-direction: column;
       gap: 30px;
-      color: #eee;
     }
 
-    /* Footer Links */
     .footer-links {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
-      font-size: 1rem;
     }
 
     .footer-links a {
@@ -33,17 +101,10 @@
       transition: color 0.3s;
     }
 
-    .footer-links a:hover {
-      color: #fff;
-    }
+    .footer-links a:hover { color: #fff; }
 
-    /* Address */
-    .footer-address {
-      font-size: 0.95rem;
-      color: #ccc;
-    }
+    .footer-address { font-size:0.95rem; color:#ccc; }
 
-    /* Contact Form */
     .footer-form {
       display: flex;
       flex-direction: column;
@@ -62,14 +123,9 @@
     }
 
     .footer-form input::placeholder,
-    .footer-form textarea::placeholder {
-      color: #aaa;
-    }
+    .footer-form textarea::placeholder { color: #aaa; }
 
-    .footer-form textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
+    .footer-form textarea { resize: vertical; min-height: 100px; }
 
     .footer-form button {
       padding: 12px;
@@ -82,30 +138,40 @@
       transition: all 0.3s ease;
     }
 
-    .footer-form button:hover {
-      background: #fff;
-    }
+    .footer-form button:hover { background: #fff; }
 
-    /* Footer Bottom */
-    .footer-bottom {
-      text-align: center;
-      font-size: 0.85rem;
-      color: #888;
-      margin-top: 20px;
-    }
+    .footer-bottom { text-align:center; font-size:0.85rem; color:#888; margin-top:20px; }
 
     @media(max-width: 600px){
-      .footer-links {
-        flex-direction: column;
-        gap: 10px;
-      }
+      .footer-links { flex-direction: column; gap: 10px; }
     }
   </style>
 </head>
 <body>
 
+  <!-- Header -->
+  <header>SEC Futuristic</header>
+
+  <!-- 12 Bars Container -->
+  <div class="container">
+    <div class="bars">
+      <div class="bar">1</div>
+      <div class="bar">2</div>
+      <div class="bar">3</div>
+      <div class="bar">4</div>
+      <div class="bar">5</div>
+      <div class="bar">6</div>
+      <div class="bar">7</div>
+      <div class="bar">8</div>
+      <div class="bar">9</div>
+      <div class="bar">10</div>
+      <div class="bar">11</div>
+      <div class="bar">12</div>
+    </div>
+  </div>
+
+  <!-- Footer -->
   <footer>
-    <!-- Footer Links -->
     <div class="footer-links">
       <a href="#">Home</a>
       <a href="#">About</a>
@@ -117,7 +183,6 @@
       <a href="#">FAQ</a>
     </div>
 
-    <!-- Address -->
     <div class="footer-address">
       SEC Corporation<br>
       1234 Future Blvd, Suite 567<br>
@@ -126,7 +191,6 @@
       Email: contact@seccompany.com
     </div>
 
-    <!-- Contact Form -->
     <form class="footer-form">
       <input type="text" placeholder="Nama" required>
       <input type="email" placeholder="Email" required>
@@ -134,7 +198,6 @@
       <button type="submit">Kirim</button>
     </form>
 
-    <!-- Footer Bottom -->
     <div class="footer-bottom">
       © 2025 SEC Corporation. All rights reserved.
     </div>
