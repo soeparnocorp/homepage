@@ -40,7 +40,13 @@ header {
 }
 
 /* Container for divisions */
-.container { flex:1; display:flex; justify-content:center; align-items:center; padding:20px 0; }
+.container {
+  flex: 1;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start; /* geser divisi ke bawah */
+  padding-top:120px; /* jarak dari header */
+}
 .bars {
   display:flex; flex-wrap:wrap; justify-content:center; gap:20px;
   background:rgba(0,0,0,0.6);
